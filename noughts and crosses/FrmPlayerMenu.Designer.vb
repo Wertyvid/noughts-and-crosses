@@ -24,6 +24,7 @@ Partial Class FrmPlayerMenu
     Private Sub InitializeComponent()
         TblLayMain = New TableLayoutPanel()
         TblLayGameGrid = New TableLayoutPanel()
+        LblWinCount = New Label()
         TblLayMain.SuspendLayout()
         SuspendLayout()
         ' 
@@ -34,6 +35,7 @@ Partial Class FrmPlayerMenu
         TblLayMain.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 600F))
         TblLayMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50.0000076F))
         TblLayMain.Controls.Add(TblLayGameGrid, 1, 0)
+        TblLayMain.Controls.Add(LblWinCount, 2, 0)
         TblLayMain.Dock = DockStyle.Fill
         TblLayMain.Location = New Point(0, 0)
         TblLayMain.Name = "TblLayMain"
@@ -58,6 +60,16 @@ Partial Class FrmPlayerMenu
         TblLayGameGrid.Size = New Size(594, 594)
         TblLayGameGrid.TabIndex = 0
         ' 
+        ' LblWinCount
+        ' 
+        LblWinCount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LblWinCount.AutoSize = True
+        LblWinCount.Location = New Point(756, 0)
+        LblWinCount.Name = "LblWinCount"
+        LblWinCount.Size = New Size(41, 15)
+        LblWinCount.TabIndex = 1
+        LblWinCount.Text = "Label1"
+        ' 
         ' FrmPlayerMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -67,9 +79,11 @@ Partial Class FrmPlayerMenu
         Name = "FrmPlayerMenu"
         Text = "PlayerForm"
         TblLayMain.ResumeLayout(False)
+        TblLayMain.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents TblLayMain As TableLayoutPanel
     Friend WithEvents TblLayGameGrid As TableLayoutPanel
+    Friend WithEvents LblWinCount As Label
 End Class

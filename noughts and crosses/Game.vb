@@ -8,6 +8,7 @@ Public Class Game
     Event TurnTaken(identity As String)
     Event GameWon(identity As String)
     Event Draw()
+    Event Finish()
 
     Sub New()
         grid = {{"Empty", "Empty", "Empty"}, {"Empty", "Empty", "Empty"}, {"Empty", "Empty", "Empty"}}
@@ -46,10 +47,8 @@ Public Class Game
         Dim winningMove = CheckForWin(sender.identity)
         If winningMove Then
             RaiseEvent GameWon(sender.identity)
-            MessageBox.Show(sender.identity + " Wins!")
         ElseIf CheckForDraw() Then
             RaiseEvent Draw()
-            MessageBox.Show("Draw!")
         Else
             RaiseEvent TurnTaken(sender.identity)
         End If
@@ -82,4 +81,8 @@ Public Class Game
         Next
         Return True
     End Function
+
+    Sub FinishGame()
+        RaiseEvent Finish()
+    End Sub
 End Class
