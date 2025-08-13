@@ -12,7 +12,7 @@
         identity = setIdentity
         game = setGame
         Text = identity
-        game.FillVisualGrid(TblLayGameGrid)
+        game.FillVisualGrid(TblLayGameGrid, identity)
     End Sub
 
 
